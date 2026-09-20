@@ -11,6 +11,7 @@
 <p align="center">
   <a href="https://github.com/pheonix14/github-achievement-radar/stargazers"><img src="https://img.shields.io/github/stars/pheonix14/github-achievement-radar?color=yellow&style=for-the-badge" alt="Stars" /></a>
   <a href="https://github.com/pheonix14"><img src="https://img.shields.io/badge/Developed%20By-Pheonix14-blueviolet?style=for-the-badge&logo=github" alt="Developer" /></a>
+  <a href="https://github.com/sponsors/pheonix14"><img src="https://img.shields.io/badge/Sponsor-Pheonix14-ff69b4?style=for-the-badge&logo=github-sponsors" alt="Sponsor" /></a>
   <a href="https://github.com/pheonix14/github-achievement-radar/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" /></a>
 </p>
 
@@ -18,19 +19,20 @@
 
 ## 🌟 Why This Exists
 
-GitHub awards badges like **Pull Shark**, **Pair Extraordinaire**, **Galaxy Brain**, and **Starstruck**, but hides your exact progress counter. You never know how many more PRs or discussions you need to reach the **Gold (x3)** or **Mythic (x4)** tiers!
+GitHub awards official profile badges like **Pull Shark**, **Pair Extraordinaire**, **Galaxy Brain**, and **Starstruck**, but hides your exact progress counter. You never know how many more PRs or discussions you need to reach the **Gold (x3)** or **Mythic (x4)** tiers!
 
 **GitHub Achievement Radar** solves this by:
 1. Scanning your actual contributions via the GitHub API.
-2. Calculating your exact percentage toward the next milestone.
+2. Calculating your exact percentage toward the next milestone tier.
 3. Automatically generating a glassmorphic, cyber-glow SVG card.
 4. Auto-committing the card to your repository or profile README!
 
 ---
 
-## 🚀 Quickstart (Automated GitHub Workflow)
+## 🚀 Step-by-Step Setup Guide
 
-Create `.github/workflows/achievement-radar.yml` in your profile repository (e.g. `your-username/your-username` or any repo):
+### 1. Add Workflow to Your Repository
+Create a file at `.github/workflows/achievement-radar.yml` in your profile repository (e.g. `your-username/your-username`):
 
 ```yaml
 name: Update Achievement Radar
@@ -38,7 +40,7 @@ name: Update Achievement Radar
 on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight UTC
-  workflow_dispatch: # Allows manual trigger anytime
+  workflow_dispatch: # Allows manual one-click trigger anytime
 
 permissions:
   contents: write
@@ -66,7 +68,8 @@ jobs:
           git push
 ```
 
-### Embed in Your README:
+### 2. Embed the Card in Your Profile README:
+Add this line anywhere in your profile `README.md`:
 ```markdown
 <p align="center">
   <img src="achievement-radar.svg" alt="My GitHub Achievements Progress" />
@@ -80,9 +83,9 @@ jobs:
 ### Inputs
 | Input | Description | Default | Required |
 | :--- | :--- | :--- | :--- |
-| `github-token` | GitHub access token | `${{ github.token }}` | **Yes** |
-| `username` | Target GitHub username | `${{ github.repository_owner }}` | No |
-| `output-path` | Path to save the generated SVG | `achievement-radar.svg` | No |
+| `github-token` | GitHub access token (`GITHUB_TOKEN` or personal access token) | `${{ github.token }}` | **Yes** |
+| `username` | Target GitHub username to calculate progress for | `${{ github.repository_owner }}` | No |
+| `output-path` | Output path where the SVG is saved | `achievement-radar.svg` | No |
 
 ### Outputs
 | Output | Description |
@@ -94,12 +97,16 @@ jobs:
 
 ---
 
-## 🤝 Author & Credits
+## 💖 Support, Star & Donate
 
-Developed with ❤️ by **[Pheonix14](https://github.com/pheonix14)**.
+This open-source tool is developed and actively maintained with passion by **[Pheonix14](https://github.com/pheonix14)**.
 
-⭐ **If you love this tool, please consider:**
-* **[Starring this repository](https://github.com/pheonix14/github-achievement-radar)**
-* **[Following @pheonix14 on GitHub](https://github.com/pheonix14)**
+If you find this action useful in tracking your achievements:
+* ⭐ **[Star this repository](https://github.com/pheonix14/github-achievement-radar)** to support development!
+* 👤 **[Follow @pheonix14 on GitHub](https://github.com/pheonix14)** to stay updated with new developer tools.
+* ☕ **[Donate / Sponsor Pheonix14 on GitHub](https://github.com/sponsors/pheonix14)** to keep free open-source utilities alive!
 
-Licensed under the [MIT License](LICENSE).
+---
+
+## 📄 License
+Licensed under the [MIT License](LICENSE). Copyright (c) 2026 Pheonix14.

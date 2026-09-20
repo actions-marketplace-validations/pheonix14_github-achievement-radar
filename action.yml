@@ -1,5 +1,5 @@
 name: 'GitHub Achievement Radar'
-description: 'Track live progress toward Pull Shark, Pair Extraordinaire, Galaxy Brain & generate dynamic tier SVG badges for your profile README.'
+description: 'Track live progress toward Pull Shark, Pair & Galaxy Brain with dynamic tier SVG badges.'
 author: 'Pheonix14'
 branding:
   icon: 'award'
