@@ -1,0 +1,34 @@
+name: 'GitHub Achievement Radar'
+description: 'Track live progress toward Pull Shark, Pair Extraordinaire, Galaxy Brain & generate dynamic tier SVG badges for your profile README.'
+author: 'Pheonix14'
+branding:
+  icon: 'award'
+  color: 'yellow'
+
+inputs:
+  github-token:
+    description: 'GitHub token with read permissions (use secrets.GITHUB_TOKEN or a PAT)'
+    required: true
+    default: '${{ github.token }}'
+  username:
+    description: 'Target GitHub username to calculate achievement progress for'
+    required: false
+    default: '${{ github.repository_owner }}'
+  output-path:
+    description: 'Path where the dynamic SVG achievement card will be saved'
+    required: false
+    default: 'achievement-radar.svg'
+
+outputs:
+  radar-svg:
+    description: 'Relative path to the generated SVG badge file'
+  pull-shark-progress:
+    description: 'Current count and progress to next Pull Shark tier'
+  pair-extraordinaire-progress:
+    description: 'Current count and progress to next Pair Extraordinaire tier'
+  galaxy-brain-progress:
+    description: 'Current count and progress to next Galaxy Brain tier'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
